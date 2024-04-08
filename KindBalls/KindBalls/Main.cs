@@ -47,7 +47,7 @@ namespace KindBalls
                 alpha = 30;
                 alpha = alpha * pi / 180;
                 T = 2 * v * Math.Sin(alpha) / g;
-                //ввели значения полёта тут, пока нет ввода через окно
+                
 
                 Rectangle pep = new Rectangle(50, 90, 0, 2);
                 double vx = v * Math.Cos(alpha);
@@ -105,6 +105,7 @@ namespace KindBalls
             voron1.Cout += cout1.Collision_cout;
             voron1.fly();
         }*/
+
         [STAThread]
         public static void Main()
         {
@@ -113,11 +114,40 @@ namespace KindBalls
         }
         public Program()
         {
+            Title = "Главное окно";
             Button start_btn = new Button();
             start_btn.Content = "Старт полёта";
             start_btn.Click += ButtonOnClick;
-            Content = start_btn;
+            StackPanel stack = new StackPanel();
+            stack.Background = Brushes.Aquamarine;
+            Content = stack;
+
+            TextBox txtbox_alpha = new TextBox();
+            TextBlock txtblock_alpha = new TextBlock();
+            txtblock_alpha.Text = "Введите угол:";
+            
+            StackPanel stack_alpha = new StackPanel();
+            stack_alpha.Orientation = Orientation.Horizontal;
+            stack_alpha.Children.Add(txtblock_alpha);
+            stack_alpha.Children.Add(txtbox_alpha);
+
+            TextBox txtbox_v = new TextBox();
+            TextBlock txtblock_v = new TextBlock();
+            txtblock_v.Text = "Введите скорость:";
+            StackPanel stack_v = new StackPanel();
+            stack_v.Orientation = Orientation.Horizontal;
+            stack_v.Children.Add(txtblock_v);
+            stack_v.Children.Add(txtbox_v);
+
+
+            stack.Children.Add(stack_alpha);
+            stack.Children.Add(stack_v);
+            stack.Children.Add(start_btn);
+
+            
         }
+
+        
 
         void ButtonOnClick(object sender, RoutedEventArgs args)
         {
