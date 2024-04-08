@@ -1,0 +1,7 @@
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\bin\Debug\KindBalls.exe.config
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\bin\Debug\KindBalls.exe
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\bin\Debug\KindBalls.pdb
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls.exe
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls.pdb
