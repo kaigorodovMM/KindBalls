@@ -41,10 +41,10 @@ namespace KindBalls
             {
                 return 0.01;
             }
-            public void fly()
+            public void fly(double n1, double n2)
             {
-                v = 30;
-                alpha = 30;
+                v = n1;
+                alpha = n2;
                 alpha = alpha * pi / 180;
                 T = 2 * v * Math.Sin(alpha) / g;
                 
@@ -117,7 +117,7 @@ namespace KindBalls
             Title = "Главное окно";
             Button start_btn = new Button();
             start_btn.Content = "Старт полёта";
-            start_btn.Click += ButtonOnClick;
+            
             StackPanel stack = new StackPanel();
             stack.Background = Brushes.Aquamarine;
             Content = stack;
@@ -143,20 +143,23 @@ namespace KindBalls
             stack.Children.Add(stack_alpha);
             stack.Children.Add(stack_v);
             stack.Children.Add(start_btn);
+            start_btn.Click += ButtonOnClick;
 
-            
+            void ButtonOnClick(object sender, RoutedEventArgs args)
+            {
+                Bird voron1 = new Bird();
+                Return1 cout1 = new Return1();
+               
+
+                voron1.Cout += cout1.Collision_cout;
+                voron1.fly(Convert.ToDouble(txtbox_alpha.Text), Convert.ToDouble(txtbox_v.Text));
+            }
+
         }
 
         
 
-        void ButtonOnClick(object sender, RoutedEventArgs args)
-        {
-            Bird voron1 = new Bird();
-            Return1 cout1 = new Return1();
+        
 
-
-            voron1.Cout += cout1.Collision_cout;
-            voron1.fly();
-        }
     }
 }

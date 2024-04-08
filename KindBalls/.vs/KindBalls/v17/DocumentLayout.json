@@ -5,12 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BDFBE9D0-841F-41DA-B7F7-D01B55E4CA73}|KindBalls\\KindBalls.csproj|c:\\users\\admin\\documents\\github\\kindballs\\kindballs\\kindballs\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BDFBE9D0-841F-41DA-B7F7-D01B55E4CA73}|KindBalls\\KindBalls.csproj|solutionrelative:kindballs\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Documents\\GitHub\\WPF2022\\WPF2022\\04 077 FormatTheButton\\Project2\\02 37 VaryTheBackground .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Documents\\GitHub\\WPF2022\\WPF2022\\04 073 ClickTheButton\\CodeFile1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,35 +24,9 @@
               "RelativeDocumentMoniker": "KindBalls\\Main.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\KindBalls\\KindBalls\\KindBalls\\Main.cs",
               "RelativeToolTip": "KindBalls\\Main.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAAAHsAAAAAAAAA",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAAAJEAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T10:47:17.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CodeFile1.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\WPF2022\\WPF2022\\04 073 ClickTheButton\\CodeFile1.cs",
-              "RelativeDocumentMoniker": "..\\..\\WPF2022\\WPF2022\\04 073 ClickTheButton\\CodeFile1.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\WPF2022\\WPF2022\\04 073 ClickTheButton\\CodeFile1.cs",
-              "RelativeToolTip": "..\\..\\WPF2022\\WPF2022\\04 073 ClickTheButton\\CodeFile1.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAB8AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T11:11:06.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "02 37 VaryTheBackground .cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\WPF2022\\WPF2022\\04 077 FormatTheButton\\Project2\\02 37 VaryTheBackground .cs",
-              "RelativeDocumentMoniker": "..\\..\\WPF2022\\WPF2022\\04 077 FormatTheButton\\Project2\\02 37 VaryTheBackground .cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\WPF2022\\WPF2022\\04 077 FormatTheButton\\Project2\\02 37 VaryTheBackground .cs",
-              "RelativeToolTip": "..\\..\\WPF2022\\WPF2022\\04 077 FormatTheButton\\Project2\\02 37 VaryTheBackground .cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T11:17:28.741Z",
               "EditorCaption": ""
             }
           ]
