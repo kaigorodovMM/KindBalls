@@ -117,17 +117,21 @@ namespace KindBalls
         {
             Title = "KindBalls";
             Button start_btn = new Button();
+            start_btn.Margin = new Thickness(2);
             start_btn.Content = "Старт полёта";
 
 
             TextBox txtbox_alpha = new TextBox();
-            
+            txtbox_alpha.Margin = new Thickness(2);
             TextBlock txtblock_alpha = new TextBlock();
+            txtblock_alpha.Margin = new Thickness(2);
             txtblock_alpha.Text = "Введите угол:";
             txtbox_alpha.Width = 50;
 
             TextBox txtbox_v = new TextBox();
+            txtbox_v.Margin = new Thickness(2);
             TextBlock txtblock_v = new TextBlock();
+            txtblock_v.Margin = new Thickness(2);
             txtblock_v.Text = "Введите скорость:";
 
             start_btn.Click += ButtonOnClick;
@@ -205,6 +209,10 @@ namespace KindBalls
             dock.Children.Add(grid1);
             grid1.Background = Brushes.Aquamarine;
 
+            Canvas canv = new Canvas();
+            dock.Children.Add(canv);
+            canv.Background = Brushes.LightYellow;
+            canv.Margin = new Thickness(5);
 
             void ButtonOnClick(object sender, RoutedEventArgs args)
             {
