@@ -124,7 +124,7 @@ namespace KindBalls
             
             TextBlock txtblock_alpha = new TextBlock();
             txtblock_alpha.Text = "Введите угол:";
-            
+            txtbox_alpha.Width = 50;
 
             TextBox txtbox_v = new TextBox();
             TextBlock txtblock_v = new TextBlock();
