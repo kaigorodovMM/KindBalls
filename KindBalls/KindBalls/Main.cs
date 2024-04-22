@@ -115,36 +115,58 @@ namespace KindBalls
         }
         public Program()
         {
-            Title = "Главное окно";
+            Title = "KindBalls";
             Button start_btn = new Button();
             start_btn.Content = "Старт полёта";
-            
-            StackPanel stack = new StackPanel();
-            stack.Background = Brushes.Aquamarine;
-            Content = stack;
+
 
             TextBox txtbox_alpha = new TextBox();
+            
             TextBlock txtblock_alpha = new TextBlock();
             txtblock_alpha.Text = "Введите угол:";
             
-            StackPanel stack_alpha = new StackPanel();
-            stack_alpha.Orientation = Orientation.Horizontal;
-            stack_alpha.Children.Add(txtblock_alpha);
-            stack_alpha.Children.Add(txtbox_alpha);
 
             TextBox txtbox_v = new TextBox();
             TextBlock txtblock_v = new TextBlock();
             txtblock_v.Text = "Введите скорость:";
-            StackPanel stack_v = new StackPanel();
-            stack_v.Orientation = Orientation.Horizontal;
-            stack_v.Children.Add(txtblock_v);
-            stack_v.Children.Add(txtbox_v);
 
-
-            stack.Children.Add(stack_alpha);
-            stack.Children.Add(stack_v);
-            stack.Children.Add(start_btn);
             start_btn.Click += ButtonOnClick;
+
+
+            Grid grid1 = new Grid();
+            grid1.Margin = new Thickness(5);
+            for (int i = 0; i < 3; i++)
+            {
+                RowDefinition rowdef = new RowDefinition();
+                rowdef.Height = GridLength.Auto;
+                grid1.RowDefinitions.Add(rowdef);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                ColumnDefinition coldef = new ColumnDefinition();
+                coldef.Width = GridLength.Auto;
+                grid1.ColumnDefinitions.Add(coldef);
+            }
+            grid1.Children.Add(txtblock_alpha);
+            Grid.SetRow(txtblock_alpha, 0);
+            Grid.SetColumn(txtblock_alpha, 0);
+
+            grid1.Children.Add(txtbox_alpha);
+            Grid.SetRow(txtbox_alpha, 0);
+            Grid.SetColumn(txtbox_alpha, 1);
+
+            grid1.Children.Add(txtblock_v);
+            Grid.SetRow(txtblock_v, 1);
+            Grid.SetColumn(txtblock_v, 0);
+
+            grid1.Children.Add(txtbox_v);
+            Grid.SetRow(txtbox_v, 1);
+            Grid.SetColumn(txtbox_v, 1);
+
+            grid1.Children.Add(start_btn);
+            Grid.SetRow(start_btn, 2);
+
+
 
             /*  изменение размеров Content по размерам окна 
             Viewbox view = new Viewbox();
@@ -179,8 +201,10 @@ namespace KindBalls
             DockPanel.SetDock(status, Dock.Bottom);
             dock.Children.Add(status);
 
-            DockPanel.SetDock(stack, Dock.Left);
-            dock.Children.Add(stack);
+            DockPanel.SetDock(grid1, Dock.Left);
+            dock.Children.Add(grid1);
+            grid1.Background = Brushes.Aquamarine;
+
 
             void ButtonOnClick(object sender, RoutedEventArgs args)
             {
