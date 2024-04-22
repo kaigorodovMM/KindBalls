@@ -23,6 +23,7 @@ namespace KindBalls
             const double pi = 3.1415;
             double v, alpha, T;
             double t, x = 0, y = 0;
+            double r = 5;
 
             public void read() // ввод параметров полёта
             {
@@ -50,7 +51,7 @@ namespace KindBalls
                 T = 2 * v * Math.Sin(alpha) / g;
                 
 
-                Rectangle pep = new Rectangle(50, 90, 0, 2);
+                Circle pep = new Circle(50,50,40);
                 double vx = v * Math.Cos(alpha);
                 double vy = v * Math.Sin(alpha);
 
@@ -60,7 +61,7 @@ namespace KindBalls
                     y = y + 0.04 * vy;
                     vx = vx - 0.04 * k(t) * vx; // m = 1 kg;
                     vy = vy - 0.04 * (g + k(t) * vy);
-                    if (x >= pep.x1 && x <= pep.x2 && y >= pep.y1 && y <= pep.y2)
+                    if (Math.Sqrt(Math.Pow(x  - pep.x, 2) + Math.Pow(y - pep.y, 2)) <= (r + pep.r) )
                     {
                         position_write();
                         //Console.WriteLine("Столкновение");
@@ -77,15 +78,14 @@ namespace KindBalls
 
         }
 
-        public class Rectangle
+        public class Circle
         {
-            public double x1, x2, y1, y2;
-            public Rectangle(double x1, double x2, double y1, double y2)
+            public double x, y, r;
+            public Circle(double x, double y, double r)
             {
-                this.x1 = x1;
-                this.x2 = x2;
-                this.y1 = y1;
-                this.y2 = y2;
+                this.x = x;
+                this.y = y;
+                this.r = r;
             }
         }
 
