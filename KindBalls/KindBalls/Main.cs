@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -144,6 +145,42 @@ namespace KindBalls
             stack.Children.Add(stack_v);
             stack.Children.Add(start_btn);
             start_btn.Click += ButtonOnClick;
+
+            /*  изменение размеров Content по размерам окна 
+            Viewbox view = new Viewbox();
+            Content = view;
+            view.Child = stack;
+            */
+
+            DockPanel dock = new DockPanel();
+            Content = dock;
+            // Создание меню           
+            Menu menu = new Menu();
+            MenuItem item1 = new MenuItem();
+            item1.Header = "Игра";
+            menu.Items.Add(item1);
+
+            MenuItem item2 = new MenuItem();
+            item2.Header = "Справка";
+            menu.Items.Add(item2);
+
+            // Размещение меню у верхнего края панели            
+            DockPanel.SetDock(menu, Dock.Top);
+            dock.Children.Add(menu);
+
+            
+
+            // Создание строки состояния             
+            StatusBar status = new StatusBar();
+            StatusBarItem statitem = new StatusBarItem();
+            statitem.Content = "Число очков: 0";
+            status.Items.Add(statitem);
+            // Размещение строки состояния у нижнего края панели             
+            DockPanel.SetDock(status, Dock.Bottom);
+            dock.Children.Add(status);
+
+            DockPanel.SetDock(stack, Dock.Left);
+            dock.Children.Add(stack);
 
             void ButtonOnClick(object sender, RoutedEventArgs args)
             {
