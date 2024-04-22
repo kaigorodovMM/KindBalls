@@ -45,12 +45,9 @@ namespace KindBalls
             }
             public void fly(double n1, double n2)
             {
-                v = n1;
-                alpha = n2;
+                v = n2;
+                alpha = n1;
                 alpha = alpha * pi / 180;
-                T = 2 * v * Math.Sin(alpha) / g;
-                
-
                 Circle pep = new Circle(50,50,40);
                 double vx = v * Math.Cos(alpha);
                 double vy = v * Math.Sin(alpha);
@@ -64,17 +61,21 @@ namespace KindBalls
                     if (Math.Sqrt(Math.Pow(x  - pep.x, 2) + Math.Pow(y - pep.y, 2)) <= (r + pep.r) )
                     {
                         position_write();
-                        //Console.WriteLine("Столкновение");
                         Cout.Invoke();
                         break;
                     }
                     if (y >= 0) position_write();
+                    else
+                            End.Invoke();
                 }
                 Console.WriteLine("Полёт завершён");
 
             }
+
             public delegate void Collisions();
             public event Collisions Cout;
+            public delegate void Fly_end();
+            public event Fly_end End;
 
         }
 
@@ -89,14 +90,6 @@ namespace KindBalls
             }
         }
 
-        public class Return1
-        {
-            public void Collision_cout()
-            {
-                //Console.WriteLine("Столкновение");
-                MessageBox.Show("Столкновение");
-            }
-        }
         /*public static void Main(string[] args)
         {
             Bird voron1 = new Bird();
@@ -115,6 +108,8 @@ namespace KindBalls
         }
         public Program()
         {
+            int point = 0, lives = 5;
+
             Title = "KindBalls";
             Button start_btn = new Button();
             start_btn.Margin = new Thickness(2);
@@ -134,7 +129,7 @@ namespace KindBalls
             txtblock_v.Margin = new Thickness(2);
             txtblock_v.Text = "Введите скорость:";
 
-            start_btn.Click += ButtonOnClick;
+            
 
 
             Grid grid1 = new Grid();
@@ -199,7 +194,10 @@ namespace KindBalls
             // Создание строки состояния             
             StatusBar status = new StatusBar();
             StatusBarItem statitem = new StatusBarItem();
-            statitem.Content = "Число очков: 0";
+            
+            statitem.Content = string.Format("Игра начата. Доступно 5 жизней.", point, lives);
+            
+                
             status.Items.Add(statitem);
             // Размещение строки состояния у нижнего края панели             
             DockPanel.SetDock(status, Dock.Bottom);
@@ -214,16 +212,38 @@ namespace KindBalls
             canv.Background = Brushes.LightYellow;
             canv.Margin = new Thickness(5);
 
+            start_btn.Click += ButtonOnClick;
+
+            void status_update()
+            {
+                statitem.Content = string.Format("Число очков: {0}. Осталось жизней: {1}", point, lives);
+                if (lives == 0)
+                {
+                    start_btn.IsEnabled = false;
+                    MessageBox.Show("Игра завершена");
+                }
+            }
+
+            void Collision_cout()
+            {
+                point += 1;
+                status_update();
+            }
+
+            void No_Collision()
+            {
+                lives -= 1;
+                status_update();
+            }
+
             void ButtonOnClick(object sender, RoutedEventArgs args)
             {
                 Bird voron1 = new Bird();
-                Return1 cout1 = new Return1();
-               
 
-                voron1.Cout += cout1.Collision_cout;
+                voron1.Cout += Collision_cout;
+                voron1.End += No_Collision;
                 voron1.fly(Convert.ToDouble(txtbox_alpha.Text), Convert.ToDouble(txtbox_v.Text));
             }
-
         }
 
         
