@@ -207,8 +207,14 @@ namespace KindBalls
             dock.Children.Add(grid1);
             grid1.Background = Brushes.Aquamarine;
 
+            ScrollViewer myScrollViewer = new ScrollViewer();
+            myScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             Canvas canv = new Canvas();
-            dock.Children.Add(canv);
+            myScrollViewer.Content = canv;
+
+            canv.Width = 1000; // размеры
+            canv.Height = 500; // размеры
+            dock.Children.Add(myScrollViewer);
             canv.Background = Brushes.LightYellow;
             canv.Margin = new Thickness(5);
 
@@ -244,6 +250,13 @@ namespace KindBalls
                 voron1.End += No_Collision;
                 voron1.fly(Convert.ToDouble(txtbox_alpha.Text), Convert.ToDouble(txtbox_v.Text));
             }
+
+
+
+
+
+
+
         }
 
         
