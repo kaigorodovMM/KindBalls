@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace KindBalls
 {
@@ -211,6 +212,27 @@ namespace KindBalls
             myScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             Canvas canv = new Canvas();
             myScrollViewer.Content = canv;
+
+
+
+            Ellipse prep = new Ellipse();
+            int r = 50;
+            int x = 0, y = 0;
+
+
+
+            prep.Stroke = Brushes.Black;
+            prep.Fill = Brushes.DarkBlue;
+            Canvas.SetLeft(prep, x-r);
+            Canvas.SetTop(prep, y-r);
+            prep.VerticalAlignment = VerticalAlignment.Center;
+            
+            prep.Width = r * 2;
+            prep.Height = r * 2;
+            canv.Children.Add(prep);
+
+
+            //628 - привязка
 
             canv.Width = 1000; // размеры
             canv.Height = 500; // размеры

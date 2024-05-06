@@ -5,3 +5,6 @@ C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\bin\Debug\KindBall
 C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\bin\Debug\KindBalls.pdb
 C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls.exe
 C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls.pdb
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\XAMLFile1.baml
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls_MarkupCompile.cache
+C:\Users\Admin\Documents\GitHub\KindBalls\KindBalls\KindBalls\obj\Debug\KindBalls.g.resources
